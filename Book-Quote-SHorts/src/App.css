@@ -1,0 +1,173 @@
+/* App.css */
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #66d4ff, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(102, 212, 255, 0.5), 0 0 20px rgba(167, 139, 250, 0.5);
+}
+
+header p {
+  margin-top: 0.5rem;
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+main {
+  max-width: 40rem;
+  width: 100%;
+}
+
+/* Glassmorphism effect for the quote card */
+.quote-card {
+  min-height: 180px;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(1rem);
+  position: relative;
+  z-index: 10;
+}
+
+.quote-card:hover {
+  transform: translateY(-0.5rem) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.quote-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.quote-card p {
+  margin-bottom: 0.75rem;
+}
+
+.quote-card p:first-child {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #f3f4f6;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.quote-card p:last-child {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.controls,
+.actions,
+.dots {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Base button style for a frosted glass look */
+button.control-btn,
+button.share-btn,
+button.like-btn:not(.liked) {
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.75rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  color: #ddd;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+/* Control button hover effect with glow */
+button.control-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+button.play-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #4c8aff, #3c77eb);
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(50, 100, 200, 0.3);
+}
+
+button.play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(50, 100, 200, 0.4);
+}
+
+button.like-btn.liked {
+  background: linear-gradient(135deg, #ff6b8b, #ff4757);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(255, 107, 139, 0.4);
+}
+
+button.like-btn.liked:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 139, 0.5);
+}
+
+button.share-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.dots button {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.dots button.active {
+  background-color: #60a5fa;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px #60a5fa;
+  border-color: #60a5fa;
+}
+
+footer {
+  margin-top: 3rem;
+  color: #888;
+  font-size: 0.85rem;
+  position: relative;
+  z-index: 10;
+}
